@@ -1,53 +1,12 @@
-//multiplies to 8
-function multiply(a,b) {
+/*function multiply(a, b) {
   return a * b;
 }
 
-const result = multiply(2, 4);
+const result = multiply(2 ,4);
 
 console.log(result);
 
-//prints ASCII value of character
-var my_string = "a";
-var ASCII_value = my_string.charCodeAt(0);
-console.log(ASCII_value);
-
-var my_string = "Udacity";
-
-// Iterate using a Loop
-for (var i = 0; i < my_string.length; i++) {
-  console.log(my_string.charCodeAt(i));
-}
-
-// \n tabs it down
-var haiku = "Blowing from the west" + "\nFallen leaves gather" + "\nIn the east."
-console.log(haiku);
-
-// string concatentation
-var adjective1 = "amazing";
-var adjective2 = "fun";
-var adjective3 = "entertaining";
-var madLib = "The Intro to JavaScript course is "+ adjective1 +". James and Julia are so "+ adjective2 +". I cannot wait to work through the rest of this "+ adjective3 +" content!";
-console.log(madLib);
-
-//string concatenation
-var firstName = "Julia";
-var interest = "cats";
-var hobby = "play video games";
-var awesomeMessage = "Hi, my name is " + firstName + ". I love " + interest + ". In my spare time, I like to " + hobby + ".";
-console.log(awesomeMessage);
-
-//conditionals flowchart to code base if statement
-var price = 15.00; //price of our hammer
-var money = 20.00; //how much money I have
-
-if(money >= price) {
-  console.log("buy the hammer");
-} else {
-  console.log("don't buy the hammer");
-}
-
-//else if statement when you need more then 2 conditionals
+If...Else Statements
 var weather = "sunny";
 
 if (weather === "snow") {
@@ -58,20 +17,42 @@ if (weather === "snow") {
   console.log("Wear what you have on.");
 }
 
-//even or odd
+var money = 100.50;
+var price = 100.50;
 
-var number = 2
-
-if (number % 2 === 0) {
-  console.log("even");
+if (money > price) {
+  console.log("You paid extra, here's your change.");
+} else if (money === price) {
+  console.log("You paid the exact amount, have a nice day!");
 } else {
-  console.log("odd");
+  console.log("That's not enough, you still owe money.");
 }
 
-//Musical Groups
-var musicians = 1;
+var runner = "Kendyll";
+var position = 2;
+var medal;
 
-if (musicians <=0) {
+if(position === 1) {
+  medal = "gold";
+} else if(position === 2) {
+  medal = "silver";
+} else if (position === 3) {
+  medal = "bronze";
+} else {
+  medal = "pat on the back";
+}
+
+console.log(runner + " received a " + medal + "medal.");
+
+var number = 11;
+if (0 === number % 2) {
+    console.log("even");
+} else {
+    console.log("odd");
+}
+
+let musicians = 1;
+if (musicians <= 0) {
   console.log("not a group");
 } else if (musicians === 1) {
   console.log("solo");
@@ -81,48 +62,76 @@ if (musicians <=0) {
   console.log("trio");
 } else if (musicians === 4) {
   console.log("quartet");
-} else if (musicians >= 5) {
+} else if (musicians >= 5); {
   console.log("this is a large group");
 }
 
-// Murder Mystery
+Logical AND and OR
+let rooms = 'gallery';
+let weapons = 'poison';
+let suspects = 'Mr. Kalehoff';
+let solved = false;
 
-var room = "ballroom"
-var suspect = "Mr. Parkes"
-var weapon = "Poison"
-var solved = false;
-
-if (room === "ballroom") {
-  weapon = "poison";
-  if (suspect === "Mr. Kalehoff")
+if (rooms === 'ballroom' && suspects === 'Mr. Kalehoff') {
+  weapons = 'poison';
   solved = true;
-} else if (room === "gallery") {
-  weapon = "trophy";
-  if (suspect === "Ms. Van Cleve")
+} else if (rooms === 'gallery' && suspects === 'Ms. Van Cleve') {
+  weapons = 'trophy';
   solved = true;
-} else if (room === "billiards room") {
-  weapon = "pool stick";
-  if (suspect === "Mrs. Sparr")
+} else if (rooms === 'billiards room' && suspects === 'Mrs. Sparr') {
+  weapons = 'pool stick';
   solved = true;
-} else if (room === "dining room") {
-  weapon = "knife"
-  if (suspect === "Mr. Parkes")
+} else if (rooms === 'dining room' && suspects === 'Mr. Parkes') {
+  weapons = 'knife';
   solved = true;
 }
 
 if (solved) {
-  console.log(suspect + " did it in the " + room + " with the " + weapon + "!")
+  console.log(suspects + " did it in the " + rooms + " with the " + weapons + "!");
 } else {
   console.log("wrong suspect");
 }
 
-// Checking your Balance 
-var balance = 325.00;
-var checkBalance = true;
-var isActive = false;
 
-// change the values of `balance`, `checkBalance`, and `isActive` to test your code
-var balance = -325;
+let rooms = 'ballroom';
+let weapons = 'poison';
+let suspects = 'Mr. Kalehoff';
+let solved = true;
+
+if (rooms === 'ballroom' && suspects === 'Mr. Kalehoff' && weapons === 'poison') {
+  solved = true;
+} else if (rooms === 'gallery' && suspects === 'Ms. Van Cleve' && weapons === 'trophy') {
+  solved = true;
+} else if (rooms === 'billiards room' && suspects === 'Mrs. Sparr' && weapons === 'pool stick') {
+  solved = true;
+} else if (rooms === 'dining room' && suspects === 'Mr. Parkes' && weapons === 'knife') {
+  solved = true;
+}
+
+if (solved) {
+  console.log(suspects + " did it in the " + rooms + " with the " + weapons + "!");
+} else {
+  console.log("wrong suspect");
+}
+
+
+let balance = 2340.10394;
+let isActive = true;
+let checkBalance = false;
+
+if (balance > 0 && isActive === true && checkBalance === true) {
+  console.log("Your balance is " + "$" + balance.toFixed(2) + ".");
+} else if (isActive === false) {
+  console.log("Your account is no longer active.");
+} else if (balance === 0) {
+  console.log("Your account is empty."); 
+} else if (balance < 0) {
+  console.log("Your balance is negative, Please contact bank.");
+} else if (checkBalance === false) {
+  console.log("Thank you. Have a nice day!")
+}
+
+var balance = 325;
 var checkBalance = true;
 var isActive = true;
 
@@ -147,49 +156,44 @@ else {
   console.log("Thank you. Have a nice day!");
 }
 
-//Ice Cream 
-// change the values of `flavor`, `vessel`, and `toppings` to test your code
-var flavor = "strawberry";
-var vessel = "cone";
-var toppings = "cookies";
+let flavor = 'vanilla';
+let vessel = 'cone';
+let toppings = 'sprinkles';
 
-if ((flavor === "vanilla" || flavor === "chocolate") && (vessel === "cone" || vessel === "bowl") && (toppings === "sprinkles" || toppings === "peanuts")){
-        console.log ("I'd like two scoops of " + flavor + "ice cream in a " + vessel + "with " + toppings + ".")
+if (flavor === 'vanilla' || flavor === 'chocolate' && vessel === 'cone' || vessel === 'bowl' && toppings === 'sprinkles' || toppings === 'peanuts') {
+  console.log(" I'd like two scoops of " + flavor + " ice cream in a " + vessel + " with " + toppings + '.');
 }
 
-//What do I wear
-// change the values of `shirtWidth`, `shirtLength`, and `shirtSleeve` to test your code
-var shirtWidth = 21;
-var shirtLength = 99;
-var shirtSleeve = 8.40;
 
-var size = "NA";
+let shirtWidth = 23; 
+let shirtLength = 30;
+let shirtSleeve = 8.71;
+let size = "NA";
 
-if ((shirtWidth>=18 && shirtWidth<20) && (shirtLength>=28 && shirtLength<29) && (shirtSleeve>=8.13 && shirtSleeve<8.38) ) {
-    size = "S";
+if ((shirtWidth >= 18 && shirtWidth < 20) && (shirtLength >= 28 && shirtLength < 29) && (shirtSleeve >= 8.13 && shirtSleeve < 8.38)) {
+  size = "S";
 }
-else if ((shirtWidth>=20 && shirtWidth<22) && (shirtLength>=29 && shirtLength<30) && (shirtSleeve>=8.38 && shirtSleeve<8.63) ) {
-    size = "M";
+else if ((shirtWidth >= 20 && shirtWidth < 22) && (shirtLength >= 29 && shirtLength < 30) && (shirtSleeve >= 8.38 && shirtSleeve < 8.63)) {
+  size = "M";
 }
-else if ((shirtWidth>=22 && shirtWidth<24) && (shirtLength>=30 && shirtLength<31) && (shirtSleeve>=8.63 && shirtSleeve<8.88) ) {
-    size = "L";
+else if ((shirtWidth >= 22 && shirtWidth < 24) && (shirtLength >= 30 && shirtLength < 31) && (shirtSleeve >= 8.63 && shirtSleeve < 8.88)) {
+  size = "L";
 }
-else if ((shirtWidth>=24 && shirtWidth<26) && (shirtLength>=31 && shirtLength<33) && (shirtSleeve>=8.88 && shirtSleeve<9.63) ) {
-    size = "XL";
+else if ((shirtWidth >= 24 && shirtWidth < 26) && (shirtLength >= 31 && shirtLength < 33) && (shirtSleeve >= 8,88 && shirtSleeve < 9.63)) {
+  size = "XL";
 }
-else if ((shirtWidth>=26 && shirtWidth<28) && (shirtLength>=33 && shirtLength<34) && (shirtSleeve>=9.63 && shirtSleeve<10.13) ) {
-    size = "2XL";
-}
-else if ((shirtWidth>=28) && (shirtLength>=34) && (shirtSleeve>=10.13) ) {
+else if ((shirtWidth >= 26 && shirtWidth < 28) && (shirtLength >= 33 && shirtLength < 34) && (shirtSleeve >= 9.63 && shirtSleeve < 10.13)) {
+  size = "2XL";
+}  
+else if ((shirtWidth >= 28) && (shirtLength >= 34) && (shirtSleeve >= 10.13)) {
     size = "3XL";
-}
+} 
 else {
-    size = "NA";
+  size = "NA";
 }
 console.log(size);
 
-//Ternary operator provides you with a shortcut for writing lengthy if...else statements
-//Normal
+Ternarary Operator
 var isGoing = true;
 var color;
 
@@ -201,43 +205,64 @@ if (isGoing) {
 
 console.log(color);
 
-//Ternary Operator
+
 var isGoing = true;
 var color = isGoing ? "green" : "red";
 console.log(color);
 
-//Navigating the food chain
-var eatPlants = false;
-vae eatsAnimals = true;
+let eatsPlants = true;
+let eatsAnimals = true;
 
-var category = eatsPlants ? (eatsAnimals ? "omnivore" : "herbivore") : (eatsAnimals ? "carnivore" : "undefined");
+let category = eatsPlants ? (eatsAnimals ? "Omnivore" : "Herbivore") : (eatsAnimals ? "Carnivore" : "Undefined");
 console.log(category);
 
-//Back to School
-var education = 'no high school diploma';
-var salary = 0;
+Switch Statements 
 
-switch (education) {
-  case "no high school diploma":
+let salary = 41496
+let education = 'an Associate\'s degree'
+
+switch(education) {
+  case 'no high school diploma':
     salary = 25636;
     break;
-  case "a high school diploma":
+
+  case 'a high school diploma':
     salary = 35256;
     break;
-  case "an Associate's degree":
+
+  case 'an Associate\'s degree':
     salary = 41496;
     break;
-  case "a Bachelor's degree":
+
+  case "a Bachelor's Degree":
     salary = 59124;
     break;
-  case "a Master's degree":
+
+  case "a Master's Degree":
     salary = 69732;
     break;
-  case "a Professional degree":
+  
+  case 'a Professional Degree':
     salary = 89960;
     break;
-  case "a Doctoral degree":
+  
+  case 'a Doctoral Degree':
     salary = 84396;
     break;
 }
-console.log("In 2015, a person with "+education+" earned an average of $"+salary.toLocaleString("en-US")+"/year.");
+
+console.log("In 2015, a person with " + education + " earned an average of " + salary.toLocaleString() + '.');
+
+
+const whichSchool  = function (age) {
+  if (age < 13) {
+    return "Elementary School";
+  } else if (age >= 13 && age <= 18) {
+    return "Seconary School";
+  } else {
+    return "Lighthouse Labs";
+  }
+}
+
+console.log(whichSchool(20));
+*/
